@@ -76,18 +76,3 @@ keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 -- replace all instances of currently selected word
 keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
-
-local opts = { noremap = true, silent = true }
--- Normal-mode commands
-keymap.set("n", "<A-j>", ":MoveLine(1)<CR>", opts)
-keymap.set("n", "<A-k>", ":MoveLine(-1)<CR>", opts)
-keymap.set("n", "<A-h>", ":MoveHChar(-1)<CR>", opts)
-keymap.set("n", "<A-l>", ":MoveHChar(1)<CR>", opts)
-keymap.set("n", "<leader>wf", ":MoveWord(1)<CR>", opts)
-keymap.set("n", "<leader>wb", ":MoveWord(-1)<CR>", opts)
-
--- Visual-mode commands
-keymap.set("v", "<A-j>", ":MoveBlock(1)<CR>", opts)
-keymap.set("v", "<A-k>", ":MoveBlock(-1)<CR>", opts)
-keymap.set("v", "<A-h>", ":MoveHBlock(-1)<CR>", opts)
-keymap.set("v", "<A-l>", ":MoveHBlock(1)<CR>", opts)
