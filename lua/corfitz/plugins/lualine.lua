@@ -84,7 +84,8 @@ return {
 
     ins_left({
       function()
-        return "▊"
+        -- return "▊"
+        return " "
       end,
       color = { fg = colors.blue }, -- Sets highlighting of component
       padding = { left = 0, right = 1 }, -- We don't need space before this
@@ -120,7 +121,7 @@ return {
       color = function()
         -- auto change color according to neovims mode
         local mode_color = {
-          n = colors.red,
+          n = colors.yellow,
           i = colors.green,
           v = colors.blue,
           [""] = colors.blue,
@@ -237,7 +238,8 @@ return {
 
     ins_right({
       function()
-        return "▊"
+        -- return "▊"
+        return " "
       end,
       color = { fg = colors.blue },
       padding = { left = 1 },
