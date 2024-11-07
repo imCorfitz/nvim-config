@@ -6,6 +6,7 @@ return {
     -- Author: shadmansaleh
     -- Credit: glepnir
     local lualine = require("lualine")
+    local lazy_status = require("lazy.status") -- to configure lazy pending updates count
 
     -- Color table for highlights
     -- stylua: ignore
@@ -204,6 +205,12 @@ return {
     })
 
     -- Add components to right sections
+    ins_right({
+      lazy_status.updates,
+      cond = lazy_status.has_updates,
+      color = { fg = "#ff9e64" },
+    })
+
     ins_right({
       "o:encoding", -- option component same as &encoding in viml
       fmt = string.upper, -- I'm not sure why it's upper case either ;)
