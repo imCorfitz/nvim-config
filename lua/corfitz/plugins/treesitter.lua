@@ -4,7 +4,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
       "windwp/nvim-ts-autotag",
     },
     config = function()
@@ -42,29 +41,19 @@ return {
           "dockerfile",
           "gitignore",
           "query",
+          "vimdoc",
+          "c",
         },
         incremental_selection = {
           enable = true,
           keymaps = {
-            init_selection = "<C-Space>",
-            node_incremental = "<C-Space>",
+            init_selection = "<C-space>",
+            node_incremental = "<C-space>",
             scope_incremental = false,
             node_decremental = "<bs>",
           },
         },
-        enable_autocmd = false,
       })
     end,
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    dependencies = "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("nvim-ts-autotag").setup({
-        -- your config
-      })
-    end,
-    lazy = true,
-    event = "VeryLazy",
   },
 }
