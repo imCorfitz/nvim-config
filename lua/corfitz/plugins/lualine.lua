@@ -1,6 +1,6 @@
 return {
   "nvim-lualine/lualine.nvim",
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
   config = function()
     -- Eviline config for lualine
     -- Author: shadmansaleh
@@ -205,6 +205,10 @@ return {
     })
 
     -- Add components to right sections
+    ins_right({
+      "copilot", -- Add the Copilot status string
+    })
+
     ins_right({
       lazy_status.updates,
       cond = lazy_status.has_updates,
