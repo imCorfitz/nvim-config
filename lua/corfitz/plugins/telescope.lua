@@ -12,6 +12,23 @@ return {
     local actions = require("telescope.actions")
 
     telescope.setup({
+      pickers = {
+        find_files = {
+          hidden = true,
+        },
+        oldfiles = {
+          hidden = true,
+        },
+        live_grep = {
+          hidden = true,
+        },
+        grep_string = {
+          hidden = true,
+        },
+        todo = {
+          hidden = true,
+        },
+      },
       defaults = {
         path_display = { "smart" },
         mappings = {
