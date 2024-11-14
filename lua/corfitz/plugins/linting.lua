@@ -10,7 +10,7 @@ return {
       javascriptreact = { "eslint_d" },
       typescriptreact = { "eslint_d" },
       svelte = { "eslint_d" },
-      python = { "pylint" },
+      python = { "ruff" },
     }
 
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -21,19 +21,6 @@ return {
         lint.try_lint()
       end,
     })
-
-    -- Set pylint to work in virtualenv
-    lint.linters.pylint.cmd = "python"
-    lint.linters.pylint.args = {
-      "-m",
-      "pylint",
-      "-f",
-      "json",
-      "--from-stdin",
-      function()
-        return vim.api.nvim_buf_get_name(0)
-      end,
-    }
 
     vim.keymap.set("n", "<leader>l", function()
       lint.try_lint()

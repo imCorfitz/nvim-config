@@ -85,6 +85,21 @@ return {
           capabilities = capabilities,
         })
       end,
+      ["pyright"] = function()
+        lspconfig.pyright.setup({
+          capabilities = capabilities,
+          settings = {
+            pyright = {
+              disableOrganizeImports = true,
+            },
+            python = {
+              analysis = {
+                ignore = { "*" },
+              },
+            },
+          },
+        })
+      end,
       ["svelte"] = function()
         -- configure svelte server
         lspconfig["svelte"].setup({
