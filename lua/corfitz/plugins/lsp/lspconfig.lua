@@ -85,6 +85,18 @@ return {
           capabilities = capabilities,
         })
       end,
+      ["eslint"] = function()
+        lspconfig.eslint.setup({
+          capabilities = capabilities,
+          on_attach = function(client, bufnr)
+            client.server_capabilities.documentFormattingProvider = false -- disable LSP formatting if using `conform.nvim`
+            client.server_capabilities.documentRangeFormattingProvider = false
+          end,
+          settings = {
+            format = { enable = false }, -- Let `conform.nvim` handle formatting
+          },
+        })
+      end,
       ["pyright"] = function()
         lspconfig.pyright.setup({
           capabilities = capabilities,
